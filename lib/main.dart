@@ -1,4 +1,5 @@
 import 'package:animations/screens/disappear_animation.dart';
+import 'package:animations/screens/more_move_animation.dart';
 import 'package:animations/screens/move_animation.dart';
 import 'package:animations/screens/shrink_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       home: Container(
         color: Colors.white,
         child: SafeArea(
-          child: MoveAnimation()
+          child: MoreMoveAnimation()
         ),
       )
     );
