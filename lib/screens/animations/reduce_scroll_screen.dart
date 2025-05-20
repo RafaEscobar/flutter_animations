@@ -1,3 +1,4 @@
+import 'package:animations/widgets/floating_button.dart';
 import 'package:flutter/material.dart';
 
 class ReduceScrollScreen extends StatelessWidget{
@@ -26,6 +27,7 @@ class ReduceScrollScreen extends StatelessWidget{
           ],
         ),
       ),
+      floatingActionButton: FloatingButton(routeName: 'routeName')
     );
   }
 }

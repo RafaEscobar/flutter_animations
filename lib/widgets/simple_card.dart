@@ -11,7 +11,7 @@ class SimpleCard extends StatelessWidget{
     return GestureDetector(
       onTap: () => context.goNamed(type.route),
       child: Container(
-        margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.only(bottom: 26),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -31,12 +31,12 @@ class SimpleCard extends StatelessWidget{
             Expanded(
               child: Text(
                 type.description,
-                style: TextStyle(fontWeight: FontWeight.w200, fontSize: 22),
-                maxLines: 1,
+                style: TextStyle(fontWeight: FontWeight.w200, fontSize: 20),
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Icon(Icons.arrow_forward_ios_rounded, size: 26, color: Colors.black38,)
+            Icon(Icons.arrow_forward_ios_rounded, size: 30, color: Colors.black38,)
           ],
         ),
       ),
