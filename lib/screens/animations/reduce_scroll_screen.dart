@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ShrinkScreen extends StatelessWidget{
-  const ShrinkScreen({super.key});
+class ReduceScrollScreen extends StatelessWidget{
+  const ReduceScrollScreen({super.key});
+  static const String routeName = "reduce-scroll-screen";
 
   @override
   Widget build(BuildContext context) {

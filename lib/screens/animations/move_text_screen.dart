@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class MoveAnimation extends StatelessWidget{
-  const MoveAnimation({super.key});
+class MoveTextScreen extends StatelessWidget{
+  const MoveTextScreen({super.key});
+  static const String routeName = 'move-text-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class MoveAnimation extends StatelessWidget{
         slivers: [
           SliverPersistentHeader(
             pinned: true,
-            delegate: _MoveAnimationDelegate(maxExtent: 200, minExtent: 120)
+            delegate: _MoveTextScreenDelegate(maxExtent: 200, minExtent: 120)
           ),
           SliverFillRemaining(
             child: Container(
@@ -23,8 +24,8 @@ class MoveAnimation extends StatelessWidget{
   }
 }
 
-class _MoveAnimationDelegate extends SliverPersistentHeaderDelegate {
-  _MoveAnimationDelegate({
+class _MoveTextScreenDelegate extends SliverPersistentHeaderDelegate {
+  _MoveTextScreenDelegate({
     required this.maxExtent,
     required this.minExtent
   });
@@ -76,7 +77,7 @@ class _MoveAnimationDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  bool shouldRebuild(covariant _MoveAnimationDelegate oldDelegate) {
+  bool shouldRebuild(covariant _MoveTextScreenDelegate oldDelegate) {
     return oldDelegate.maxExtent != maxExtent || oldDelegate.minExtent != minExtent;
   }
 }

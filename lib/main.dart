@@ -1,6 +1,7 @@
-import 'package:animations/screens/more_move_animation.dart';
+import 'package:animations/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main(){
   runApp(MyApp());
 }
@@ -10,13 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    return MaterialApp(
-      home: Container(
-        color: Colors.white,
-        child: SafeArea(
-          child: MoreMoveAnimation()
-        ),
-      )
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRoutes.getRoutes(navigatorKey),
     );
   }
 }
