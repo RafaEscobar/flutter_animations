@@ -6,6 +6,9 @@ class ReduceScrollScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    //* 1 Definimos un CustomScrollView
+    //* > Los Slivers son: SliverPersistHeader (Para la caja que reduce su tamaño) y SliverFillRemaining (Para la caja a la que se le da scroll)
+    //! Es altamente IMPORTANTE dejar el "pinned: true" en true para que el header se quede estatico
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
@@ -14,7 +17,7 @@ class ReduceScrollScreen extends StatelessWidget{
               pinned: true,
               delegate: _ShrinkHeaderDelegate(maxExtent: 200, minExtent: 120)
             ),
-            //* Este widget nos permite estirar el contenido que tenga de tal forma que abarque todo el espacio restante (osease el espacio que nos deje el header)
+            //* SliverFillRemaining nos permite estirar el contenido que tenga de tal forma que abarque todo el espacio restante (osease el espacio que nos deje el header)
             SliverFillRemaining(
               child: Container(
                 color: Colors.yellow,
@@ -27,6 +30,8 @@ class ReduceScrollScreen extends StatelessWidget{
   }
 }
 
+//* 2 Definimos una clase que extiende de SliverPersistentHeaderDelegate para configurar/establecer las métricas del header
+//* Debe recibir por parametro la altura máxima y la mínima
 class _ShrinkHeaderDelegate extends SliverPersistentHeaderDelegate {
   _ShrinkHeaderDelegate({
     required this.maxExtent,
@@ -39,10 +44,7 @@ class _ShrinkHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    /*
-      * Aquí básicamente vamos generando una nueva altura para nuestro container con base
-      * en el scroll hecho y limitando dicha altura a la altura mínima y la máxima
-    */
+    //* 2.1 Vamos cambiando dinámicamente la altura de nuestro header con base en el scroll hecho y limitando dicha altura a la altura mínima y la máxima
     final currentHeight = (maxExtent - shrinkOffset).clamp(minExtent, maxExtent);
 
     return Container(
@@ -70,8 +72,7 @@ class _ShrinkHeaderDelegate extends SliverPersistentHeaderDelegate {
     );
   }
 
-  //* Gancho que evita renderizaciones innecesarias.
-  //* Si los valores de la instancia actual son distintos a la antigua, se devuelve un true que detona la reconstrucción.
+  //* 2.2 Gancho que evita renderizaciones innecesarias. Si los valores de la instancia actual son distintos a la antigua, se devuelve un true que detona la reconstrucción.
   @override
   bool shouldRebuild(covariant _ShrinkHeaderDelegate oldDelegate) {
     return oldDelegate.minExtent != minExtent ||
