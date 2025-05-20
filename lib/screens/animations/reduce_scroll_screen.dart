@@ -6,19 +6,23 @@ class ReduceScrollScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverPersistentHeader(
-          pinned: true,
-          delegate: _ShrinkHeaderDelegate(maxExtent: 200, minExtent: 120)
+    return Scaffold(
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverPersistentHeader(
+              pinned: true,
+              delegate: _ShrinkHeaderDelegate(maxExtent: 200, minExtent: 120)
+            ),
+            //* Este widget nos permite estirar el contenido que tenga de tal forma que abarque todo el espacio restante (osease el espacio que nos deje el header)
+            SliverFillRemaining(
+              child: Container(
+                color: Colors.yellow,
+              ),
+            )
+          ],
         ),
-        //* Este widget nos permite estirar el contenido que tenga de tal forma que abarque todo el espacio restante (osease el espacio que nos deje el header)
-        SliverFillRemaining(
-          child: Container(
-            color: Colors.yellow,
-          ),
-        )
-      ],
+      ),
     );
   }
 }
@@ -42,8 +46,27 @@ class _ShrinkHeaderDelegate extends SliverPersistentHeaderDelegate {
     final currentHeight = (maxExtent - shrinkOffset).clamp(minExtent, maxExtent);
 
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       color: Colors.blue,
       height: currentHeight,
+      child: Column(
+        spacing: 6,
+        children: [
+          Text(
+            "Este es el container que se contrae con forme se da scroll",
+            style: TextStyle(fontSize: 18, color: Colors.white,),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            "> Altura de este contenedor: ${currentHeight.toStringAsFixed(2)}",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: 12),
+          ),
+          Text(
+            "> Scroll dado: ${shrinkOffset.toStringAsFixed(2)}",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: 12),
+          )
+        ],
+      )
     );
   }
 
