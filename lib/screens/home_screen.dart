@@ -1,3 +1,5 @@
+import 'package:animations/enums/animation_types.dart';
+import 'package:animations/widgets/simple_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget{
@@ -10,38 +12,21 @@ class HomeScreen extends StatelessWidget{
       color: Colors.white,
       child: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Scaffold(
             backgroundColor: Colors.white,
             body: Column(
+              spacing: 20,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade300,
-                        spreadRadius: 1,
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-                      ),
-                    ]
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          "Titulo de la animación",
-                          style: TextStyle(fontWeight: FontWeight.w200, fontSize: 22),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      Icon(Icons.arrow_forward_ios_rounded, size: 26, color: Colors.black38,)
-                    ],
+                Align(
+                  alignment: Alignment.center,
+                  child: Text("Animaciones disponibles", style: TextStyle(fontSize: 26, fontWeight: FontWeight.w300),),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: AnimationTypes.values.length,
+                    itemBuilder: (BuildContext context, int index) => SimpleCard(type: AnimationTypes.values[index]),
                   ),
                 )
               ],
