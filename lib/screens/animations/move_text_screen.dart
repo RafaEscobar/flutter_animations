@@ -70,8 +70,6 @@ class _MoveTextScreenDelegate extends SliverPersistentHeaderDelegate {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //* 4 Envolvemos los Text en Align y definimos un Alignment(x, y) para pasarle el valor dinámico de X y así puedan desplazarse según el scroll
-          //* 5 Así mismo pasamos el tamaño dinámico del texto para que reduzca o vuelva a su tamaño normal según corresponda.
           Align(
             alignment: Alignment(text1X, 0),
             child: Text('<- Hacía la izq', style: TextStyle(fontSize: fontSize),)
