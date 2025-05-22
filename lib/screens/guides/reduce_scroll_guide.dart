@@ -51,7 +51,7 @@ class ReduceScrollGuide extends StatelessWidget{
                   borderRadius: BorderRadius.circular(20),
                   child: WidgetZoom(
                       heroAnimationTag: 'animation_one',
-                      zoomWidget: Image.asset("assets/images/animation_one.jpeg", fit: BoxFit.cover,),
+                      zoomWidget: Image.asset("assets/images/1/animation_one.jpeg", fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(height: 16,),
@@ -97,7 +97,7 @@ class ReduceScrollGuide extends StatelessWidget{
                   borderRadius: BorderRadius.circular(20),
                   child: WidgetZoom(
                       heroAnimationTag: 'animation_two',
-                      zoomWidget: Image.asset("assets/images/animation_two.jpeg", fit: BoxFit.cover,),
+                      zoomWidget: Image.asset("assets/images/1/animation_two.jpeg", fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(height: 16,),
@@ -168,7 +168,7 @@ class ReduceScrollGuide extends StatelessWidget{
                   borderRadius: BorderRadius.circular(20),
                   child: WidgetZoom(
                       heroAnimationTag: 'animation_three',
-                      zoomWidget: Image.asset("assets/images/animation_three.jpeg", fit: BoxFit.cover,),
+                      zoomWidget: Image.asset("assets/images/1/animation_three.jpeg", fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(height: 10,),
@@ -192,7 +192,7 @@ class ReduceScrollGuide extends StatelessWidget{
                   borderRadius: BorderRadius.circular(20),
                   child: WidgetZoom(
                       heroAnimationTag: 'animation_four',
-                      zoomWidget: Image.asset("assets/images/animation_four.jpeg", fit: BoxFit.cover,),
+                      zoomWidget: Image.asset("assets/images/1/animation_four.jpeg", fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(height: 10,),

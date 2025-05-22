@@ -35,7 +35,14 @@ class MoveTextGuide extends StatelessWidget{
                     ],
                   ),
                 ),
-                //* Imagen
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: WidgetZoom(
+                      heroAnimationTag: 'animation_one',
+                      zoomWidget: Image.asset("assets/images/2/animation_one.jpeg", fit: BoxFit.cover,),
+                  ),
+                ),
+                SizedBox(height: 20,),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
@@ -50,7 +57,13 @@ class MoveTextGuide extends StatelessWidget{
                     ],
                   ),
                 ),
-                //* Imagen
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: WidgetZoom(
+                      heroAnimationTag: 'animation_two',
+                      zoomWidget: Image.asset("assets/images/2/animation_two.jpeg", fit: BoxFit.cover,),
+                  ),
+                ),
                 SizedBox(height: 20,),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
