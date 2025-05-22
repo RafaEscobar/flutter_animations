@@ -163,6 +163,7 @@ class ReduceScrollGuide extends StatelessWidget{
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: WidgetZoom(
@@ -183,10 +184,18 @@ class ReduceScrollGuide extends StatelessWidget{
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
                         textAlign: TextAlign.justify,
                       ),
-                      
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: WidgetZoom(
+                      heroAnimationTag: 'animation_four',
+                      zoomWidget: Image.asset("assets/images/animation_four.jpeg", fit: BoxFit.cover,),
+                  ),
+                ),
+                SizedBox(height: 10,),
               ],
             ),
           ),
