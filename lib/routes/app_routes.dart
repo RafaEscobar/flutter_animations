@@ -1,5 +1,6 @@
 import 'package:animations/screens/animations/move_text_screen.dart';
 import 'package:animations/screens/animations/reduce_scroll_screen.dart';
+import 'package:animations/screens/guides/reduce_scroll_guide.dart';
 import 'package:animations/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -20,6 +21,13 @@ class AppRoutes {
             path: ReduceScrollScreen.routeName,
             name: ReduceScrollScreen.routeName,
             builder: (BuildContext context, GoRouterState state) => ReduceScrollScreen(),
+            routes: [
+              GoRoute(
+                path: ReduceScrollGuide.routeName,
+                name: ReduceScrollGuide.routeName,
+                builder: (BuildContext context, GoRouterState state) => ReduceScrollGuide(),
+              )
+            ]
           ),
           GoRoute(
             path: MoveTextScreen.routeName,
