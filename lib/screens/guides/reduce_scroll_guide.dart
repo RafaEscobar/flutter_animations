@@ -96,7 +96,7 @@ class ReduceScrollGuide extends StatelessWidget{
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: WidgetZoom(
-                      heroAnimationTag: 'animation_one',
+                      heroAnimationTag: 'animation_two',
                       zoomWidget: Image.asset("assets/images/animation_two.jpeg", fit: BoxFit.cover,),
                   ),
                 ),
@@ -133,6 +133,57 @@ class ReduceScrollGuide extends StatelessWidget{
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                         textAlign: TextAlign.justify,
                       ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Divider(height: 0.7,),
+                SizedBox(height: 10,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "3. Como podemos observar el método build recibe como parametros dos elementos más de lo habitual: shrinkOffset y overlapsContent",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.justify,
+                      ),
+                      SizedBox(height: 10,),
+                      Text(
+                        "> shrinkOffset: Nos permite conocer cuando scroll ha dado el usuario",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.start,
+                      ),
+                      Text(
+                        "> overlapsContent: Es un bool que nos permite saber sí el SliverPersistentHeader está sobreponiéndose o superponiéndose.",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.start,
+                      ),
+                    ],
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: WidgetZoom(
+                      heroAnimationTag: 'animation_three',
+                      zoomWidget: Image.asset("assets/images/animation_three.jpeg", fit: BoxFit.cover,),
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Divider(height: 0.7,),
+                SizedBox(height: 10,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "4. Dentro del método build definimos una variable (currentHeight) que ira cambiando dependiendo del scroll dado. Esta variable se le pasara en el height al container y sera la encargada de ir reduciendo o volviendo a la normalidad la altura con base al scroll",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.justify,
+                      ),
+                      
                     ],
                   ),
                 ),
