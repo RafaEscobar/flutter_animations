@@ -1,3 +1,5 @@
+import 'package:animations/screens/guides/move_text_guide.dart';
+import 'package:animations/widgets/floating_button.dart';
 import 'package:flutter/material.dart';
 
 class MoveTextScreen extends StatelessWidget{
@@ -23,6 +25,7 @@ class MoveTextScreen extends StatelessWidget{
           ],
         ),
       ),
+      floatingActionButton: FloatingButton(routeName: MoveTextGuide.routeName)
     );
   }
 }
